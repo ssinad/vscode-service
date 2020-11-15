@@ -21,63 +21,105 @@
 					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
+						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
 				<key>AMActionVersion</key>
-				<string>2.1.1</string>
+				<string>1.0.2</string>
 				<key>AMApplication</key>
 				<array>
-					<string>Finder</string>
+					<string>Automator</string>
 				</array>
 				<key>AMParameterProperties</key>
-				<dict/>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
 				<key>AMProvides</key>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.path</string>
+						<string>com.apple.applescript.object</string>
 					</array>
 				</dict>
-				<key>AMRequiredResources</key>
-				<array/>
 				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Get Selected Finder Items 2.action</string>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
 				<key>ActionName</key>
-				<string>Get Selected Finder Items</string>
+				<string>Run AppleScript</string>
 				<key>ActionParameters</key>
-				<dict/>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		tell application "Finder"
+    if exists Finder window 1 then
+        set currentDir to target of Finder window 1 as alias
+    else
+        set currentDir to desktop as alias
+    end if
+end tell
+log POSIX path of currentDir		return POSIX path of currentDirend run</string>
+				</dict>
 				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.GetSelectedFinderItems2</string>
+				<string>com.apple.Automator.RunScript</string>
 				<key>CFBundleVersion</key>
-				<string>2.1.1</string>
+				<string>1.0.2</string>
 				<key>CanShowSelectedItemsWhenRun</key>
 				<false/>
 				<key>CanShowWhenRun</key>
 				<true/>
 				<key>Category</key>
 				<array>
-					<string>AMCategoryFilesAndFolders</string>
+					<string>AMCategoryUtilities</string>
 				</array>
 				<key>Class Name</key>
-				<string>AMGetSelectedFinderItemsAction</string>
+				<string>RunScriptAction</string>
 				<key>InputUUID</key>
-				<string>E1024243-2734-4D64-95DB-85E0E41A4D27</string>
+				<string>693F89AE-C760-4834-B07D-5E908415893A</string>
 				<key>Keywords</key>
-				<array/>
+				<array>
+					<string>Run</string>
+				</array>
 				<key>OutputUUID</key>
-				<string>CAFD4A5A-B20B-408A-976D-EAC3AEB9CEF9</string>
+				<string>1ABA1ABE-E9A3-435A-BB1F-2267D738010A</string>
 				<key>UUID</key>
-				<string>15047ADF-F4FC-4256-8EC1-9CEC57D640BF</string>
+				<string>A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1</string>
 				<key>UnlocalizedApplications</key>
 				<array>
-					<string>Finder</string>
+					<string>Automator</string>
 				</array>
 				<key>arguments</key>
-				<dict/>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>529.000000:368.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
+			<key>isViewVisible</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -128,7 +170,8 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>/usr/local/bin/code "$1"</string>
+					<string>echo "$1"
+/usr/local/bin/code "$1"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -241,7 +284,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:370.000000</string>
+				<string>529.000000:730.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -251,10 +294,10 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>F2A5303B-5758-4E4C-B0F7-182250288B02</key>
+		<key>82BF3B00-68AF-4342-934C-DF500F0B3B76</key>
 		<dict>
 			<key>from</key>
-			<string>15047ADF-F4FC-4256-8EC1-9CEC57D640BF - 15047ADF-F4FC-4256-8EC1-9CEC57D640BF</string>
+			<string>A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1 - A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1</string>
 			<key>to</key>
 			<string>22F9CDAF-9B43-4937-9E26-D943A2D60D47 - 22F9CDAF-9B43-4937-9E26-D943A2D60D47</string>
 		</dict>
@@ -12858,11 +12901,11 @@
 		<key>customImageFileExtension</key>
 		<string>icns</string>
 		<key>inputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject.folder</string>
+		<string>com.apple.Automator.nothing</string>
 		<key>outputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>presentationMode</key>
-		<integer>15</integer>
+		<integer>11</integer>
 		<key>processesInput</key>
 		<integer>0</integer>
 		<key>serviceApplicationBundleID</key>
@@ -12870,7 +12913,7 @@
 		<key>serviceApplicationPath</key>
 		<string>/System/Library/CoreServices/Finder.app</string>
 		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.fileSystemObject.folder</string>
+		<string>com.apple.Automator.nothing</string>
 		<key>serviceOutputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceProcessesInput</key>
