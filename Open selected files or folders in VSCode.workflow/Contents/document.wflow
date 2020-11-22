@@ -134,7 +134,7 @@
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>shell</key>
 					<string>/bin/zsh</string>
 					<key>source</key>
@@ -253,7 +253,7 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>5E15F247-9E9D-4D0A-BD9C-51D30DE43434</key>
+		<key>297C235B-18F5-4248-89B5-5C2AB6164399</key>
 		<dict>
 			<key>from</key>
 			<string>AC5C2A63-59CE-4E40-AEC7-5544FA3DA93E - AC5C2A63-59CE-4E40-AEC7-5544FA3DA93E</string>
