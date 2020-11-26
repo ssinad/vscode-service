@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>492</string>
+	<string>509</string>
 	<key>AMApplicationVersion</key>
 	<string>2.10</string>
 	<key>AMDocumentVersion</key>
@@ -77,7 +77,13 @@
 				</array>
 				<key>arguments</key>
 				<dict/>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>207.000000:68.000000</string>
 			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -129,8 +135,8 @@
 				<dict>
 					<key>COMMAND_STRING</key>
 					<string>echo "$1"
-# /usr/local/bin/code "$@"
-"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "$@"</string>
+/usr/local/bin/code "$@"
+# "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "$@"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -243,7 +249,7 @@
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:370.000000</string>
+				<string>309.000000:370.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -253,7 +259,7 @@
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>51874040-F243-4567-8D74-CC44B904F223</key>
+		<key>35F01FB6-E0B8-43B2-8CAE-653A5D381F4A</key>
 		<dict>
 			<key>from</key>
 			<string>AC5C2A63-59CE-4E40-AEC7-5544FA3DA93E - AC5C2A63-59CE-4E40-AEC7-5544FA3DA93E</string>
