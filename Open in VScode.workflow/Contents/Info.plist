@@ -14,7 +14,7 @@
 			<key>NSMenuItem</key>
 			<dict>
 				<key>default</key>
-				<string>Open selected files or folders in VSCode</string>
+				<string>Open in VScode</string>
 			</dict>
 			<key>NSMessage</key>
 			<string>runWorkflowAsService</string>
@@ -23,10 +23,6 @@
 				<key>NSApplicationIdentifier</key>
 				<string>com.apple.finder</string>
 			</dict>
-			<key>NSSendFileTypes</key>
-			<array>
-				<string>public.item</string>
-			</array>
 		</dict>
 	</array>
 </dict>
