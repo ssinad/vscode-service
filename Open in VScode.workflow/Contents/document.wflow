@@ -60,23 +60,21 @@
 		else
 			set currentDir to desktop as alias
 		end if
-		set fSelection to selection as alias list
+		set fSelection to selection -- as alias list
 		
 		repeat with f in fSelection
+			-- display dialog (class of f as text)
 			set end of nameList to name of f
-			set fileNames to fileNames &amp; POSIX path of f &amp; " "
+			set fileNames to fileNames &amp; "\"" &amp; POSIX path of (f as alias) &amp; "\" "
 		end repeat
 	end tell
 	
 	if fileNames = "" then
-		-- display dialog POSIX path of currentDir
-		-- do shell script "/usr/local/bin/code " &amp; the quoted form of POSIX path of currentDir
-		set fileNames to POSIX path of currentDir
-		-- return POSIX path of currentDir
+		set fileNames to "\"" &amp; POSIX path of currentDir &amp; "\""
 	end if
 	-- else
-	-- display dialog "/usr/local/bin/code " &amp; the quoted form of fileNames
-	do shell script "/usr/local/bin/code \"" &amp; fileNames &amp; "\""
+	-- display dialog "/usr/local/bin/code \"" &amp; fileNames &amp; "\""
+	do shell script "/usr/local/bin/code " &amp; fileNames
 	return fileNames
 	-- end if
 	
