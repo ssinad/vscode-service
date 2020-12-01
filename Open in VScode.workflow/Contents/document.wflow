@@ -76,7 +76,7 @@
 	end if
 	-- else
 	-- display dialog "/usr/local/bin/code " &amp; the quoted form of fileNames
-	do shell script "/usr/local/bin/code " &amp; fileNames
+	do shell script "/usr/local/bin/code \"" &amp; fileNames &amp; "\""
 	return fileNames
 	-- end if
 	
