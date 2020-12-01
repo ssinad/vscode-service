@@ -51,7 +51,36 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	set nameList to {}	set fileNames to ""	tell application "Finder"		if exists Finder window 1 then			set currentDir to target of Finder window 1 as alias		else			set currentDir to desktop as alias		end if		set fSelection to selection as alias list				repeat with f in fSelection			set end of nameList to name of f			set fileNames to fileNames &amp; POSIX path of f &amp; " "		end repeat	end tell		if fileNames = "" then		-- display dialog POSIX path of currentDir		return POSIX path of currentDir	else		-- display dialog fileNames		return fileNames	end if	end run</string>
+					<string>on run {input, parameters}
+	set nameList to {}
+	set fileNames to ""
+	tell application "Finder"
+		if exists Finder window 1 then
+			set currentDir to target of Finder window 1 as alias
+		else
+			set currentDir to desktop as alias
+		end if
+		set fSelection to selection as alias list
+		
+		repeat with f in fSelection
+			set end of nameList to name of f
+			set fileNames to fileNames &amp; POSIX path of f &amp; " "
+		end repeat
+	end tell
+	
+	if fileNames = "" then
+		-- display dialog POSIX path of currentDir
+		-- do shell script "/usr/local/bin/code " &amp; the quoted form of POSIX path of currentDir
+		set fileNames to POSIX path of currentDir
+		-- return POSIX path of currentDir
+	end if
+	-- else
+	-- display dialog "/usr/local/bin/code " &amp; the quoted form of fileNames
+	do shell script "/usr/local/bin/code " &amp; fileNames
+	return fileNames
+	-- end if
+	
+end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -161,9 +190,10 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>echo "$1"
-/usr/local/bin/code "$1"
-# "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "$1"</string>
+					<string># echo "$1"
+osascript -e 'tell application (path to frontmost application as text) to display dialog "'"$@"'" buttons {"OK"}'
+/usr/local/bin/code "$@"
+# "/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" "$@"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -187,6 +217,8 @@ end run</string>
 				</array>
 				<key>Class Name</key>
 				<string>RunShellScriptAction</string>
+				<key>Disabled</key>
+				<true/>
 				<key>InputUUID</key>
 				<string>DB96951E-7DD6-4A1B-BC91-2C4B11FFFEE9</string>
 				<key>Keywords</key>
@@ -274,19 +306,19 @@ end run</string>
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<true/>
+				<integer>0</integer>
 				<key>location</key>
-				<string>529.000000:550.000000</string>
+				<string>529.000000:409.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<true/>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>57EFBD24-9EC6-4D08-8408-CBC3D23E434B</key>
+		<key>B066ED21-6ABC-460B-9F3E-4BB576C9C5FA</key>
 		<dict>
 			<key>from</key>
 			<string>A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1 - A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1</string>
