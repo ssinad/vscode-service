@@ -51,34 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}
-	set nameList to {}
-	set fileNames to ""
-	tell application "Finder"
-		if exists Finder window 1 then
-			set currentDir to target of Finder window 1 as alias
-		else
-			set currentDir to desktop as alias
-		end if
-		set fSelection to selection -- as alias list
-		
-		repeat with f in fSelection
-			-- display dialog (class of f as text)
-			set end of nameList to name of f
-			set fileNames to fileNames &amp; "\"" &amp; POSIX path of (f as alias) &amp; "\" "
-		end repeat
-	end tell
-	
-	if fileNames = "" then
-		set fileNames to "\"" &amp; POSIX path of currentDir &amp; "\""
-	end if
-	-- else
-	-- display dialog "/usr/local/bin/code \"" &amp; fileNames &amp; "\""
-	do shell script "/usr/local/bin/code " &amp; fileNames
-	return fileNames
-	-- end if
-	
-end run</string>
+					<string>on run {input, parameters}	set nameList to {}	set fileNames to ""	tell application "Finder"		if exists Finder window 1 then			set currentDir to target of Finder window 1 as alias		else			set currentDir to desktop as alias		end if				-- set fSelection to selection -- as alias list		-- repeat with f in fSelection		-- -- display dialog (class of f as text)		-- set end of nameList to name of f		-- set fileNames to fileNames &amp; "\"" &amp; POSIX path of (f as alias) &amp; "\" "		-- end repeat			end tell		if fileNames = "" then		set result to "\"" &amp; POSIX path of currentDir &amp; "\""	else		set result to fileNames	end if			-- display dialog "/usr/local/bin/code \"" &amp; fileNames &amp; "\""	do shell script "/usr/local/bin/code " &amp; result	-- return 	-- end if	end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -132,7 +105,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>529.000000:368.000000</string>
+				<string>309.000000:368.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -306,7 +279,7 @@ osascript -e 'tell application (path to frontmost application as text) to displa
 				<key>isViewVisible</key>
 				<integer>0</integer>
 				<key>location</key>
-				<string>529.000000:409.000000</string>
+				<string>309.000000:409.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -316,7 +289,7 @@ osascript -e 'tell application (path to frontmost application as text) to displa
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>B066ED21-6ABC-460B-9F3E-4BB576C9C5FA</key>
+		<key>F9AE2E20-7290-40E6-BECF-1738B3955A7C</key>
 		<dict>
 			<key>from</key>
 			<string>A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1 - A86FEB94-B12A-4D41-88B5-3ADAF55AD0B1</string>
